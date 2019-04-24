@@ -57,11 +57,7 @@ class LakePage extends StatelessWidget {
               ],
             ),
           ),
-          Icon(
-            Icons.star,
-            color: Colors.red[500],
-          ),
-          Text('41')
+          _FavoriteStarWidget()
         ],
       ),
     );
@@ -104,3 +100,47 @@ class LakePage extends StatelessWidget {
     );
   }
 }
+
+class _FavoriteStarWidget extends StatefulWidget {
+  @override
+  __FavoriteStarWidgetState createState() => __FavoriteStarWidgetState();
+}
+
+class __FavoriteStarWidgetState extends State<_FavoriteStarWidget> {
+
+  bool _favorite = true;
+  int _starCount = 41;
+
+  void _onTapStar() {
+    setState(() {
+      if (_favorite) {
+        _favorite = false;
+        _starCount -= 1;
+      } else {
+        _favorite = true;
+        _starCount += 1;
+      }
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      children: <Widget>[
+        IconButton(
+          icon: Icon(
+            _favorite ? Icons.star : Icons.star_border,
+            color: Colors.red[500],
+          ),
+          onPressed: _onTapStar,
+        ),
+        SizedBox(
+          width: 18,
+          child: Text('$_starCount'),
+        )
+      ],
+    );
+  }
+}
+

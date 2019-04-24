@@ -9,6 +9,7 @@ import 'card.dart';
 import 'lake.dart';
 import 'grid_view_builder.dart';
 import 'navigator.dart';
+import 'tapbox.dart';
 
 void main() async {
   return runApp(MyApp());
@@ -55,6 +56,10 @@ final RouterPages = [
   {
     'name': 'NavigatorPage',
     'route': '/navigator'
+  },
+  {
+    'name': 'TapBox Page',
+    'route': '/tapbox'
   }
 ];
 //页面基础路由参数
@@ -68,7 +73,8 @@ final _routes =  {
   '/pavlova': (_) => PavloVaPage(),
   '/stack': (_) => StackPage(),
   '/grid_view_builder': (_) => GridViewBuilderPage(),
-  '/navigator': (_) => NavigatorPage()
+  '/navigator': (_) => NavigatorPage(),
+  '/tapbox': (_) => TapBoxPage()
 };
 
 class MyApp extends StatelessWidget {
