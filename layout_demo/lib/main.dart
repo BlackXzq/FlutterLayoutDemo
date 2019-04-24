@@ -8,6 +8,7 @@ import 'stack.dart';
 import 'card.dart';
 import 'lake.dart';
 import 'grid_view_builder.dart';
+import 'navigator.dart';
 
 void main() async {
   return runApp(MyApp());
@@ -50,6 +51,10 @@ final RouterPages = [
   {
     'name': 'StackPage',
     'route': '/stack'
+  },
+  {
+    'name': 'NavigatorPage',
+    'route': '/navigator'
   }
 ];
 //页面基础路由参数
@@ -62,7 +67,8 @@ final _routes =  {
   '/list_view': (_) => ListViewPage(),
   '/pavlova': (_) => PavloVaPage(),
   '/stack': (_) => StackPage(),
-  '/grid_view_builder': (_) => GridViewBuilderPage()
+  '/grid_view_builder': (_) => GridViewBuilderPage(),
+  '/navigator': (_) => NavigatorPage()
 };
 
 class MyApp extends StatelessWidget {
